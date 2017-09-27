@@ -1,0 +1,6 @@
+framework module EplayerPluginFramework {
+  umbrella header "EplayerPluginFramework.h"
+
+  export *
+  module * { export * }
+}
