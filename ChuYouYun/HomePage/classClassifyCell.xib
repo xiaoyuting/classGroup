@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="70" id="KGk-i7-Jjw" customClass="classClassifyCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="69.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ARROW _ RIGHT.png" translatesAutoresizingMaskIntoConstraints="NO" id="4Hx-ej-jdr">
+                        <rect key="frame" x="290" y="26" width="10" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="10" id="Bo1-bv-Km9"/>
+                            <constraint firstAttribute="height" constant="17" id="HxU-cY-cJd"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b6w-rf-uTC">
+                        <rect key="frame" x="19" y="18" width="112" height="39"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="39" id="LBc-Vn-DPx"/>
+                            <constraint firstAttribute="width" constant="112" id="YPC-sY-poh"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <color key="textColor" red="0.41960784313725491" green="0.41960784313725491" blue="0.41960784313725491" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="b6w-rf-uTC" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="18" id="6wA-oq-rw3"/>
+                    <constraint firstAttribute="trailing" secondItem="4Hx-ej-jdr" secondAttribute="trailing" constant="20" id="8jj-3Y-bMr"/>
+                    <constraint firstItem="b6w-rf-uTC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="19" id="Ig1-bB-bEX"/>
+                    <constraint firstItem="4Hx-ej-jdr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="26" id="VtV-ux-QOl"/>
+                    <constraint firstItem="b6w-rf-uTC" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="10" id="ZAl-aP-Kg3"/>
+                    <constraint firstAttribute="bottom" secondItem="b6w-rf-uTC" secondAttribute="bottom" constant="13" id="zST-iZ-1aV"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="6wA-oq-rw3"/>
+                        <exclude reference="zST-iZ-1aV"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="nameLab" destination="b6w-rf-uTC" id="LmY-bg-Bb7"/>
+            </connections>
+            <point key="canvasLocation" x="15" y="189"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="ARROW _ RIGHT.png" width="13" height="22"/>
+    </resources>
+</document>

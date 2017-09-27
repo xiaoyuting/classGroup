@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QuestionsAndAnswersViewController">
+            <connections>
+                <outlet property="lineView" destination="5kk-5j-Zsy" id="6EN-at-xMu"/>
+                <outlet property="myCourse" destination="VgK-Kq-xIQ" id="bJg-su-2Yi"/>
+                <outlet property="mySpecial" destination="eUC-ER-Pcv" id="fD8-Ha-K7T"/>
+                <outlet property="myView" destination="UFz-u2-Opp" id="R2J-2b-Q0e"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8gr-K7-Jub">
+                    <rect key="frame" x="0.0" y="64" width="414" height="40"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eUC-ER-Pcv">
+                            <rect key="frame" x="60" y="9" width="70" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="DfA-OD-IOy"/>
+                                <constraint firstAttribute="width" constant="70" id="VhN-hi-CTi"/>
+                            </constraints>
+                            <state key="normal" title="我的问题">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="changeBtn:" destination="-1" eventType="touchUpInside" id="YFs-gJ-5aU"/>
+                            </connections>
+                        </button>
+                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5kk-5j-Zsy">
+                            <rect key="frame" x="60" y="30" width="70" height="2"/>
+                            <color key="backgroundColor" red="0.19215686269999999" green="0.5450980392" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </view>
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VgK-Kq-xIQ">
+                            <rect key="frame" x="260" y="9" width="70" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="Llo-It-BUd"/>
+                                <constraint firstAttribute="width" constant="70" id="tX1-UU-Wfs"/>
+                            </constraints>
+                            <state key="normal" title="我的回答">
+                                <color key="titleColor" red="0.17254901959999999" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <state key="selected" title="我的回答"/>
+                            <connections>
+                                <action selector="changeBtn:" destination="-1" eventType="touchUpInside" id="7SE-5N-iyg"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="eUC-ER-Pcv" secondAttribute="bottom" constant="10" id="18z-4O-aaw"/>
+                        <constraint firstItem="VgK-Kq-xIQ" firstAttribute="top" secondItem="8gr-K7-Jub" secondAttribute="top" constant="9" id="INI-yt-kdb"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="WGU-VK-shq"/>
+                        <constraint firstItem="eUC-ER-Pcv" firstAttribute="top" secondItem="8gr-K7-Jub" secondAttribute="top" constant="9" id="XoR-Y0-kAg"/>
+                        <constraint firstItem="eUC-ER-Pcv" firstAttribute="leading" secondItem="8gr-K7-Jub" secondAttribute="leading" constant="60" id="bxG-2C-srJ"/>
+                        <constraint firstAttribute="bottom" secondItem="VgK-Kq-xIQ" secondAttribute="bottom" constant="10" id="kuA-qn-HTp"/>
+                        <constraint firstAttribute="height" constant="40" id="t4h-54-M65"/>
+                        <constraint firstAttribute="trailing" secondItem="VgK-Kq-xIQ" secondAttribute="trailing" constant="84" id="ypq-cx-t3R"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UFz-u2-Opp">
+                    <rect key="frame" x="0.0" y="105" width="414" height="631"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="UFz-u2-Opp" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="2Hw-3X-FEv"/>
+                <constraint firstAttribute="bottom" secondItem="UFz-u2-Opp" secondAttribute="bottom" id="3jd-zT-fax"/>
+                <constraint firstAttribute="trailing" secondItem="8gr-K7-Jub" secondAttribute="trailing" id="BCQ-jr-Mb2"/>
+                <constraint firstItem="8gr-K7-Jub" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="BPq-Ko-A9G"/>
+                <constraint firstAttribute="trailing" secondItem="UFz-u2-Opp" secondAttribute="trailing" id="Pku-LI-DfZ"/>
+                <constraint firstItem="UFz-u2-Opp" firstAttribute="top" secondItem="8gr-K7-Jub" secondAttribute="bottom" constant="1" id="r0A-gz-dqM"/>
+                <constraint firstItem="8gr-K7-Jub" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="utT-A8-R37"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+        </view>
+    </objects>
+</document>

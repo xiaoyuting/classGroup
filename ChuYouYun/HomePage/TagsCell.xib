@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="TagsCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="59.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="check 拷贝.png" translatesAutoresizingMaskIntoConstraints="NO" id="v83-Eh-E9L">
+                        <rect key="frame" x="292" y="20" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="5Gr-qx-QLj"/>
+                            <constraint firstAttribute="height" constant="20" id="q3B-1s-9Hh"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="v83-Eh-E9L" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="2GJ-ji-tTD"/>
+                    <constraint firstAttribute="trailing" secondItem="v83-Eh-E9L" secondAttribute="trailing" constant="8" id="FUQ-Tv-0JL"/>
+                    <constraint firstAttribute="bottom" secondItem="v83-Eh-E9L" secondAttribute="bottom" constant="19" id="M1l-hN-CrL"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="select" destination="v83-Eh-E9L" id="ii3-Iu-3u7"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="check 拷贝.png" width="39" height="39"/>
+    </resources>
+</document>

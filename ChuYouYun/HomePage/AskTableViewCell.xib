@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="153" id="KGk-i7-Jjw" customClass="AskTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="394" height="153"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="394" height="152.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nT7-pT-Z8O">
+                        <rect key="frame" x="21" y="19" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="RQk-mu-yUc"/>
+                            <constraint firstAttribute="width" constant="40" id="jds-IH-bJI"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zNT-AW-yy5">
+                        <rect key="frame" x="71" y="19" width="80" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="80" id="XXk-r8-0Ui"/>
+                            <constraint firstAttribute="height" constant="40" id="ozI-UO-N9M"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="41g-6I-RCK">
+                        <rect key="frame" x="271" y="19" width="100" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="100" id="fmT-Eu-IyQ"/>
+                            <constraint firstAttribute="height" constant="40" id="sIu-8h-VXM"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sue-el-az3">
+                        <rect key="frame" x="21" y="70" width="352" height="41.5"/>
+                        <attributedString key="attributedText">
+                            <fragment content="Label">
+                                <attributes>
+                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                </attributes>
+                            </fragment>
+                            <fragment>
+                                <string key="content">LabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelbelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabel</string>
+                                <attributes>
+                                    <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nII-MN-Ew9">
+                        <rect key="frame" x="240" y="114" width="46" height="30"/>
+                        <state key="normal" title="Button"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QXg-OB-0uP">
+                        <rect key="frame" x="327" y="114" width="46" height="30"/>
+                        <state key="normal" title="Button"/>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottomMargin" secondItem="Sue-el-az3" secondAttribute="bottom" constant="33" id="1Hp-B9-L00"/>
+                    <constraint firstItem="zNT-AW-yy5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="11" id="3Bh-Ta-l7h"/>
+                    <constraint firstItem="nT7-pT-Z8O" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="11" id="3J2-5y-Zi7"/>
+                    <constraint firstItem="41g-6I-RCK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="11" id="3ZP-tG-oHj"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="41g-6I-RCK" secondAttribute="trailing" constant="15" id="8xb-YV-ISx"/>
+                    <constraint firstItem="nT7-pT-Z8O" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="13" id="Cmz-mE-B4y"/>
+                    <constraint firstItem="zNT-AW-yy5" firstAttribute="leading" secondItem="nT7-pT-Z8O" secondAttribute="trailing" constant="10" id="Pkb-gD-ovO"/>
+                    <constraint firstItem="Sue-el-az3" firstAttribute="top" secondItem="zNT-AW-yy5" secondAttribute="bottom" constant="11" id="U8C-lI-3at"/>
+                    <constraint firstItem="Sue-el-az3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="13" id="lx5-Ek-QHb"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Sue-el-az3" secondAttribute="trailing" constant="13" id="puA-Ll-WE1"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="280" y="174.5"/>
+        </tableViewCell>
+    </objects>
+</document>

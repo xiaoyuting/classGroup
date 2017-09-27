@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CourseViewController">
+            <connections>
+                <outlet property="lineView" destination="agG-yF-HSD" id="BMl-25-2t7"/>
+                <outlet property="myCourse" destination="Igm-eo-kIH" id="F2G-OL-edy"/>
+                <outlet property="mySpecial" destination="ikP-PU-Lxb" id="haO-th-OL5"/>
+                <outlet property="tView" destination="b1e-1A-kXD" id="Mgh-9k-DZ7"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6iQ-1u-ub7">
+                    <rect key="frame" x="0.0" y="65" width="414" height="40"/>
+                    <subviews>
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Igm-eo-kIH">
+                            <rect key="frame" x="280" y="9" width="84" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="84" id="cOb-Ub-mKS"/>
+                                <constraint firstAttribute="height" constant="21" id="lTT-gK-2ol"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <state key="normal" title="我收藏的课程">
+                                <color key="titleColor" red="0.17254901960784313" green="0.47843137254901957" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" red="0.12941176470588237" green="0.43529411764705883" blue="0.6588235294117647" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="changeBtn:" destination="-1" eventType="touchUpInside" id="UHe-uh-c3i"/>
+                            </connections>
+                        </button>
+                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="agG-yF-HSD">
+                            <rect key="frame" x="50" y="30" width="84" height="2"/>
+                            <color key="backgroundColor" red="0.16470588235294117" green="0.30980392156862746" blue="0.77254901960784317" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="6if-5p-xdQ"/>
+                                <constraint firstAttribute="width" constant="84" id="ldZ-8V-gQq"/>
+                            </constraints>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ikP-PU-Lxb">
+                            <rect key="frame" x="50" y="9" width="84" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="84" id="t8w-Rq-dmH"/>
+                                <constraint firstAttribute="height" constant="21" id="ug0-5Y-5T1"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <state key="normal" title="我收藏的专辑">
+                                <color key="titleColor" red="0.17254901960784313" green="0.47843137254901957" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="changeBtn:" destination="-1" eventType="touchUpInside" id="Hkp-4E-Luc"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="Igm-eo-kIH" firstAttribute="top" secondItem="6iQ-1u-ub7" secondAttribute="top" constant="9" id="Cy2-hQ-eWi"/>
+                        <constraint firstAttribute="height" constant="40" id="EWI-Xw-qiE"/>
+                        <constraint firstAttribute="bottom" secondItem="agG-yF-HSD" secondAttribute="bottom" constant="4" id="H3P-Re-Fdi"/>
+                        <constraint firstAttribute="bottom" secondItem="Igm-eo-kIH" secondAttribute="bottom" constant="10" id="KnX-eb-CPQ"/>
+                        <constraint firstItem="ikP-PU-Lxb" firstAttribute="leading" secondItem="6iQ-1u-ub7" secondAttribute="leading" constant="50" id="amY-Z3-sbh"/>
+                        <constraint firstAttribute="trailing" secondItem="Igm-eo-kIH" secondAttribute="trailing" constant="50" id="qH9-Pd-zoR"/>
+                        <constraint firstItem="agG-yF-HSD" firstAttribute="leading" secondItem="6iQ-1u-ub7" secondAttribute="leading" constant="50" id="zrh-iw-hPN"/>
+                        <constraint firstItem="ikP-PU-Lxb" firstAttribute="top" secondItem="6iQ-1u-ub7" secondAttribute="top" constant="9" id="zsI-bv-cJk"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b1e-1A-kXD">
+                    <rect key="frame" x="0.0" y="105" width="414" height="631"/>
+                    <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="b1e-1A-kXD" secondAttribute="trailing" id="3Er-G9-MCX"/>
+                <constraint firstItem="b1e-1A-kXD" firstAttribute="top" secondItem="6iQ-1u-ub7" secondAttribute="bottom" id="4Lv-TO-fHf"/>
+                <constraint firstItem="6iQ-1u-ub7" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="MNx-Cg-ihb"/>
+                <constraint firstAttribute="trailing" secondItem="6iQ-1u-ub7" secondAttribute="trailing" id="bca-Wf-HNT"/>
+                <constraint firstItem="b1e-1A-kXD" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="gVx-MF-A1I"/>
+                <constraint firstItem="6iQ-1u-ub7" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="65" id="ufF-yZ-OQo"/>
+                <constraint firstAttribute="bottom" secondItem="b1e-1A-kXD" secondAttribute="bottom" id="xCB-dX-kwy"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+        </view>
+    </objects>
+</document>

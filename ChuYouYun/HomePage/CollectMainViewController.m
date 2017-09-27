@@ -1,0 +1,261 @@
+//
+//  CollectMainViewController.m
+//  dafengche
+//
+//  Created by 赛新科技 on 2017/7/11.
+//  Copyright © 2017年 ZhiYiForMac. All rights reserved.
+//
+
+#import "CollectMainViewController.h"
+#import "SYG.h"
+#import "rootViewController.h"
+#import "AppDelegate.h"
+
+#import "CollectLiveViewController.h"
+#import "CollectClassViewController.h"
+#import "CollectTopicViewController.h"
+
+
+
+@interface CollectMainViewController ()<UIScrollViewDelegate>
+
+@property (strong ,nonatomic)UIButton *liveButton;
+@property (strong ,nonatomic)UIButton *classButton;
+@property (strong ,nonatomic)UIButton *topicButton;
+
+@property (assign ,nonatomic)CGFloat  buttonW;
+@property (strong ,nonatomic)UIButton *HDButton;
+@property (strong ,nonatomic)UIButton *seletedButton;
+
+@property (strong ,nonatomic)UIScrollView *controllerSrcollView;
+
+
+@end
+
+@implementation CollectMainViewController
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    AppDelegate *app = [AppDelegate delegate];
+    rootViewController * nv = (rootViewController *)app.window.rootViewController;
+    [nv isHiddenCustomTabBarByBoolean:YES];
+    [self.navigationController setNavigationBarHidden:NO animated:NO];
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBar.hidden = YES;
+    
+}
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+    AppDelegate *app = [AppDelegate delegate];
+    rootViewController * nv = (rootViewController *)app.window.rootViewController;
+    [nv isHiddenCustomTabBarByBoolean:NO];
+    [super viewWillDisappear:animated];
+    self.navigationController.navigationBar.hidden = NO;
+    
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self interFace];
+    [self addNav];
+    [self addWZView];
+    [self addControllerSrcollView];
+}
+- (void)interFace {
+    
+    self.view.backgroundColor = [UIColor whiteColor];
+}
+
+- (void)addNav {
+    
+    UIView *SYGView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, MainScreenWidth, 64)];
+    SYGView.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:SYGView];
+    
+    UIButton *backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 20, 40, 40)];
+    [backButton setImage:[UIImage imageNamed:@"通用返回"] forState:UIControlStateNormal];
+    [backButton addTarget:self action:@selector(backPressed) forControlEvents:UIControlEventTouchUpInside];
+    [SYGView addSubview:backButton];
+    
+    //添加中间的文字
+   UILabel *titleText = [[UILabel  alloc] initWithFrame:CGRectMake(50, 25,MainScreenWidth - 100, 30)];
+    titleText.text = @"我的收藏";
+    [titleText setTextColor:BasidColor];
+    titleText.textAlignment = NSTextAlignmentCenter;
+    titleText.font = [UIFont systemFontOfSize:20];
+    [SYGView addSubview:titleText];
+    
+    //添加横线
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 63, MainScreenWidth, 1)];
+    button.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    [SYGView addSubview:button];
+    
+}
+
+- (void)backPressed {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+
+- (void)addWZView {
+    UIView *WZView = [[UIView alloc] initWithFrame:CGRectMake(0, 64, MainScreenWidth, 34)];
+    WZView.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:WZView];
+    //添加线
+    UILabel *lineLab = [[UILabel  alloc] initWithFrame:CGRectMake(0, 63,MainScreenWidth, 1)];
+    lineLab.backgroundColor = [UIColor colorWithHexString:@"#dedede"];
+    [self.view addSubview:lineLab];
+    //添加按钮
+    NSArray *titleArray = @[@"直播",@"课程",@"话题"];
+    
+    CGFloat ButtonH = 20;
+    CGFloat ButtonW = MainScreenWidth / titleArray.count;
+    _buttonW = ButtonW;
+    for (int i = 0; i < titleArray.count; i ++) {
+        UIButton *button = [[UIButton alloc] init];
+        button.frame = CGRectMake(ButtonW * i, 7, ButtonW, ButtonH);
+        button.tag = i;
+        [button setTitle:titleArray[i] forState:UIControlStateNormal];
+        [button setTitleColor:[UIColor colorWithRed:32.f / 255 green:105.f / 255 blue:207.f / 255 alpha:1] forState:UIControlStateSelected];
+        [button setTitleColor:[UIColor colorWithRed:89.f / 255 green:89.f / 255 blue:89.f / 255 alpha:1] forState:UIControlStateNormal];
+        button.titleLabel.font = [UIFont systemFontOfSize:14];
+        button.titleLabel.font = [UIFont boldSystemFontOfSize:14];
+        [button addTarget:self action:@selector(WZButton:) forControlEvents:UIControlEventTouchUpInside];
+        [WZView addSubview:button];
+        if (i == 0) {
+            [self WZButton:button];
+        }
+        
+        if (i == 0) {
+            _liveButton = button;
+        } else if (i == 1) {
+            _classButton = button;
+        } else if (i == 2) {
+            _topicButton = button;
+        }
+        
+        
+        //添加分割线
+        UIButton *lineButton = [[UIButton alloc] initWithFrame:CGRectMake(ButtonW + ButtonW * i, 10, 1, ButtonH - 6)];
+        lineButton.backgroundColor = [UIColor colorWithHexString:@"#dedede"];
+        [WZView addSubview:lineButton];
+        
+        
+    }
+    
+    //添加横线
+    _HDButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 27 + 3, ButtonW, 1)];
+    _HDButton.backgroundColor = [UIColor colorWithRed:32.f / 255 green:105.f / 255 blue:207.f / 255 alpha:1];
+    [WZView addSubview:_HDButton];
+    _HDButton.hidden = YES;
+    
+    
+}
+
+
+- (void)WZButton:(UIButton *)button {
+    
+    self.seletedButton.selected = NO;
+    button.selected = YES;
+    self.seletedButton = button;
+    
+    [UIView animateWithDuration:0.25 animations:^{
+        _HDButton.frame = CGRectMake(button.tag * _buttonW, 27 + 3, _buttonW, 1);
+        //        _pay_status = [NSString stringWithFormat:@"%ld",button.tag];
+    }];
+    //    [self NetWorkGetOrder];
+    
+    _controllerSrcollView.contentOffset = CGPointMake(button.tag * MainScreenWidth, 0);
+    
+}
+
+
+- (void)addControllerSrcollView {
+    
+    _controllerSrcollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 98,  MainScreenWidth, MainScreenHeight * 3 + 500)];
+    _controllerSrcollView.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    _controllerSrcollView.pagingEnabled = YES;
+    _controllerSrcollView.scrollEnabled = YES;
+    _controllerSrcollView.delegate = self;
+    _controllerSrcollView.bounces = NO;
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    _controllerSrcollView.contentSize = CGSizeMake(MainScreenWidth * 3,0);
+    [self.view addSubview:_controllerSrcollView];
+    _controllerSrcollView.backgroundColor = [UIColor redColor];
+    
+    CollectLiveViewController * liveVc= [[CollectLiveViewController alloc]init];
+    liveVc.view.frame = CGRectMake(0, -98, MainScreenWidth, MainScreenHeight);
+    [self addChildViewController:liveVc];
+    [_controllerSrcollView addSubview:liveVc.view];
+    
+    CollectClassViewController * classVc = [[CollectClassViewController alloc]init];
+    classVc.view.frame = CGRectMake(MainScreenWidth, -98, MainScreenWidth, MainScreenHeight * 2 + 500);
+    [self addChildViewController:classVc];
+    [_controllerSrcollView addSubview:classVc.view];
+    
+    CollectTopicViewController * topicVc = [[CollectTopicViewController alloc]init];
+    topicVc.view.frame = CGRectMake(MainScreenWidth * 2, -98, MainScreenWidth, MainScreenHeight);
+    [self addChildViewController:topicVc];
+    [_controllerSrcollView addSubview:topicVc.view];
+    
+}
+
+
+
+#pragma mark --- 滚动代理
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    
+    //要吧之前的按钮设置为未选中 不然颜色不会变
+    self.seletedButton.selected = NO;
+    
+    
+    NSLog(@"%lf",scrollView.contentOffset.x);
+    
+    if (_controllerSrcollView == scrollView) {
+        CGPoint point = scrollView.contentOffset;
+        if (point.x == 0) {
+            _controllerSrcollView.contentOffset = CGPointMake(0, 0);
+            
+            
+            [UIView animateWithDuration:0.25 animations:^{
+                _HDButton.frame = CGRectMake(0, 27 + 3, _buttonW, 1);
+            }];
+            
+            [_liveButton setTitleColor:BasidColor forState:UIControlStateNormal];
+            [_classButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            [_topicButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            
+            
+        } else if(point.x == MainScreenWidth) {
+            
+            _controllerSrcollView.contentOffset = CGPointMake(MainScreenWidth, 0);
+            
+            [UIView animateWithDuration:0.25 animations:^{
+                _HDButton.frame = CGRectMake(_buttonW, 27 + 3, _buttonW, 1);
+            }];
+            [_liveButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            [_classButton setTitleColor:BasidColor forState:UIControlStateNormal];
+            [_topicButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+
+            
+        }else if (point.x == MainScreenWidth * 2) {
+            
+            _controllerSrcollView.contentOffset = CGPointMake(MainScreenWidth * 2, 0);
+            
+            [UIView animateWithDuration:0.25 animations:^{
+                _HDButton.frame = CGRectMake(_buttonW * 2, 27 + 3, _buttonW, 1);
+            }];
+            
+            [_liveButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            [_classButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            [_topicButton setTitleColor:BasidColor forState:UIControlStateNormal];
+            
+        }
+    }
+    
+}
+
+
+
+@end
